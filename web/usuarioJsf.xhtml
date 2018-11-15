@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset = ISO - 8859-1"/>
+        <title>Cadastro de Usuários</title>
+        <link rel="stylesheet" href="estilo.css"/>
+    </h:head>
+    <h:body>
+        <div id="container">
+            <header id="titulo">
+                <h1>Cadastro de Usuários</h1>
+                <h2>Discentes, docentes e Servidores Administrativos</h2>
+            </header><br/>
+            <section id="corpo">
+                <h:form id="cadastro">
+                   
+                        <p:messages showDetail="false" showSummary="true" autoUpdate="true"/>
+                        <h:inputHidden value="#{usuarioBean.usuario.cpf}"/>
+                        <h:inputHidden value="#{usuarioBean.usuario.ativo}"/>
+                        <h:panelGrid columns="2"/>
+
+                        <p:outputLabel value="Nome Completo:" for="nomeCompleto" style="margin-top: 30px"/>
+                        <p:inputText id="nomeCompleto" label="NomeCompleto" value="#{usuarioBean.usuario.nomeCompleto}"
+                                     size="60" maxlength="80" rendered="true" requiredMessage="Por favor, Digite seu nome completo.">
+                            <f:validateLength minimum="20" maximum="80"/>
+                        </p:inputText><br/>
+
+                        <p:outputLabel value="CPF:" for="cpf"/>
+                        <p:inputText id="cpf" label="cpf" value="#{usuarioBean.usuario.cpf}" style= "margin-left:90px"
+                                     size="11" maxlength="11" rendered="true" requiredMessage="Por favor, Digite seu cpf.">
+                            <f:validateLength minimum="11"/>
+                        </p:inputText><br/>
+
+                        <p:fieldset id="sexo" style="margin: 5px"><legend>Sexo</legend><br/>
+                            <p:selectOneRadio value="#{usuarioBean.usuario.sexo}">
+                                <f:selectItem itemValue="masculino" itemLabel="Masculino"/>
+                                <f:selectItem itemValue="feminino" itemLabel="Feminino"/>
+                                <f:selectItem itemValue="outro" itemLabel="Outro"/>
+                            </p:selectOneRadio> 
+                        </p:fieldset>
+                        <p:outputLabel value="E-mail:" for="email"/>
+                        <p:inputText id="email"
+                                     label="email" value="#{usuarioBean.usuario.email}"
+                                     size="50" maxlength="50" required="true"
+                                     validatorMessage="E-mail inválido!">
+                            <f:validateRegex pattern="[a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9\-\_\.]+"/>
+                        </p:inputText>
+                        <h:message for="email"/>
+                        <br/>
+                        <p:outputLabel value="Telefone:" for="celular" />
+                        <p:inputText id="celular" label="telefone" style="margin-left:-4px" value="#{usuarioBean.usuario.telefone}" size="11"/><br/>
+
+                        <p:outputLabel value="Matricula:" for="matricula"/>
+                        <p:inputText id="matricula" style="margin-left:-6px" label="matricula" value="#{usuarioBean.usuario.matricula}"
+                                     size="6" maxlength="6" rendered="true" requiredMessage="Por favor, Digite sua matricula.">
+                            <f:validateLength minimum="6"/>
+                        </p:inputText><br/>
+
+                        <p:outputLabel value="Categoria de Usuário:" for="categoriaUsuario" style="margin-top:-5px"/>
+                        <p:selectOneMenu id="categoriaUsuario" value="#{usuarioBean.usuario.categoriaUsuario}">
+                            <f:selectItem  itemLabel="Selecione uma categoria" noSelectionOption="true"/>
+                            <f:selectItem itemValue="aluno" itemLabel="Aluno"/>
+                            <f:selectItem itemValue="professor" itemLabel="Professor"/>
+                            <f:selectItem itemValue="servAdministrativo" itemLabel="Servidor Administrativo"/>
+                        </p:selectOneMenu><br/>
+
+                        <p:outputLabel value="Cargo:" for="cargo"/>
+                        <p:selectOneMenu id="cargo" style="margin-left:117px" value="#{usuarioBean.usuario.cargo}">
+                            <f:selectItem itemValue="cargo1" itemLabel="Selecione um Cargo" noSelectionOption="true"/>
+                            <f:selectItem itemValue="computacao" itemLabel="Computação"/>
+                            <f:selectItem itemValue="direito" itemLabel="Direito"/>
+                            <f:selectItem itemValue="educacaoFisica" itemLabel="Educação Física"/>
+                            <f:selectItem itemValue="geografia" itemLabel="Geografia"/>
+                            <f:selectItem itemValue="historia" itemLabel="História"/>
+                            <f:selectItem itemValue="letras" itemLabel="Letras Português"/>
+                            <f:selectItem itemValue="biologia" itemLabel="Ciências Biológicas"/>
+                            <f:selectItem itemValue="enfermagem" itemLabel="Enfermagem"/>
+                            <f:selectItem itemValue="professor" itemLabel="Professor"/>
+                            <f:selectItem itemValue="servAdm" itemLabel="Servidor Administrativo"/>
+                        </p:selectOneMenu> <br/>
+
+                        <p:outputLabel value="Nome de Usuário:" for="nomeUsuario"/>
+                        <p:inputText id="nomeUsuario" label="NomeUsuario" style="margin-left:28px" value="#{usuarioBean.usuario.nomeUsuario}"
+                                     size="10" maxlength="10" rendered="true" requiredMessage="Por favor, Digite um nome de usuario.">
+                            <f:validateLength minimum="6" maximum="10"/>
+                        </p:inputText><br/>
+
+                        <p:outputLabel value="Senha:" for="senha"/>
+                        <p:inputText id="senha" label="senha" style="margin-left:113px" value="#{usuarioBean.usuario.senha}"
+                                     type="password" size="6" maxlength="6" rendered="true" requiredMessage="Por favor, Digite uma senha.">
+                        </p:inputText><br/>
+
+                        <p:outputLabel value="Confirmar Senha:" for="confirmarSenha"/>
+                        <p:inputText id="confirmarSenha" label="confirmarSenha" style="margin-left:32px" value="#{usuarioBean.confirmarSenha}"
+                                     type="password" size="6" maxlength="6" rendered="true" requiredMessage="Por favor, Cofirme sua senha.">
+                            <f:validateLength minimum="6" maximum="6"/>
+                        </p:inputText><br/>       
+                    
+                     <p:fieldset id="endereco" style="margin: 5px"><legend>Endereço</legend> <br/>
+                        <p:outputLabel value="Logradouro:" for="logradouro"/>
+                        <p:inputText id="logradouro" label="Logradouro" value="#{usuarioBean.usuario.logradouro}" size="60"/><br/>
+                        <p:outputLabel value="Numero:" for="numero" />
+                        <p:inputText id="numero" label="Número:" style="margin-left: 28px" value="#{usuarioBean.usuario.numero}" size="5">
+                            <f:validateLength  maximum="8"/>
+                        </p:inputText><br/>
+                        <p:outputLabel value="Cidade:" for="cidade" />
+                        <p:inputText id="cidade" label="Cidade" style="margin-left: 35px" value="#{usuarioBean.usuario.cidade}" size="30"/><br/>
+                        <p:outputLabel value="UF:" for="uf"/>
+                        <p:selectOneMenu id="uf" style="margin-left: 68px" value="#{usuarioBean.usuario.uf}">
+                            <f:selectItem itemValue="pi" itemLabel="PI"/>
+                            <f:selectItem itemValue="ma" itemLabel="MA"/>
+                            <f:selectItem itemValue="pe" itemLabel="PE"/>
+                            <f:selectItem itemValue="rn" itemLabel="RN"/>
+                            <f:selectItem itemValue="pr" itemLabel="PR"/>
+                            <f:selectItem itemValue="ba" itemLabel="BA"/>
+                            <f:selectItem itemValue="ce" itemLabel="CE"/>
+                            <f:selectItem itemValue="se" itemLabel="SE"/>
+                            <f:selectItem itemValue="al" itemLabel="AL"/>
+                        </p:selectOneMenu><br/>
+                        <p:outputLabel value="Bairro:" for="bairro" />
+                        <p:inputText id="bairro" label="Bairro" style="margin-left: 45px" value="#{usuarioBean.usuario.bairro}" size="30"/><br/>
+                    </p:fieldset>
+                    
+                    <p:commandButton value="Enviar" style = "margin-left: 705px" action="#{usuarioBean.salvar()}"/>
+                </h:form><br/>
+            </section>
+            <footer id="rodape">
+                <p> &copy; copyright 2015. CAD - Automação de bibliotecas. Todos os direitos reservados </p>
+            </footer>
+        </div>
+    </h:body>
+</html>

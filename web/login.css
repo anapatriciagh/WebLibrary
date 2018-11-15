@@ -1,0 +1,29 @@
+@CHARSET "ISO-8859-1";
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 02/06/2015, 11:40:14
+    Author     : Ana PAtrícia
+*/
+
+#login_adm_dialog{
+    width: 330px;
+    margin: auto;
+    margin-top: 150px;
+    padding: 30px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+}
+#cabecalho p{
+    font-family: century;
+    color: #666666;
+    font-size: 30pt;
+    text-align: center;
+    margin-left: 100px;
+    margin-top: 100px;
+    margin-bottom: -30px;
+}
+
+

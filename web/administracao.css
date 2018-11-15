@@ -1,0 +1,36 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14/06/2015, 22:52:20
+    Author     : Ana PAtrícia
+*/
+
+#boasVindas{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 18pt;
+    text-align: center;
+    font-family: century gothic;
+}
+body{
+    background-color: #dddddd;
+    color: rgba(0,0,0,1);
+}
+#container{
+    width: 800px;
+    background-color: #ffffff;
+    margin: -20px auto 0px auto; 
+    box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+    padding: 20px 30px 10px 30px;
+}
+#rodape{
+    border-top: 1.5px #666666 solid;
+    margin-top: 20px;
+}
+
+#rodape p{
+    text-align: center;
+}

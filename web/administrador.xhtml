@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset = ISO - 8859-1"/>
+        <title>Administração</title>
+        
+        <link rel="stylesheet" href="administracao.css"/>
+    </h:head>
+    <h:body>
+        <div id="container">
+            <header id="titulo">
+                <h:form>
+                    <p:menubar style="margin-top: 20px; margin-bottom: 20px; margin-left: -30px; margin-right: -30px; background-color: #666666" >
+                        <p:submenu label="Empréstimos" style="font-family: Century Gothic; font-style: inherit" >
+                            <p:menuitem value="Realizar Empréstimo" style="font-family: Century Gothic; font-style: inherit; font-size: 12pt"/>                            
+                        </p:submenu>
+                           <p:submenu label="Devoluções" style="font-family: Century Gothic; font-style: inherit">
+                            <p:menuitem value="Realizar Devolução" style="font-family: Century Gothic; font-style: inherit; font-size: 12pt"/>                            
+                        </p:submenu>
+                        <p:submenu label="Publicações" style="font-family: Century Gothic; font-style: inherit">
+                            <p:menuitem value="Gerenciar Publicações" style="font-family: Century Gothic; font-style: inherit; font-size: 12pt"/>                          
+                        </p:submenu>
+                        <p:submenu label="Sistema" style="font-family: Century Gothic; font-style: inherit">
+                            <p:menuitem value="Sair" action="login.xhtml" style="font-family: Century Gothic; font-style: inherit; font-size: 12pt"/>
+                        </p:submenu>
+                    </p:menubar>
+                </h:form>
+            </header>
+            <aside>
+                <p id="boasVindas"><b>Bem vindo, você está logado como: <h:outputText value="#{usuarioBean.usuario.nomeUsuario}"/></b></p>
+            </aside>
+            <footer id="rodape">
+                <p> Copyright &copy; 2015. CAD - Automação de bibliotecas. Todos os direitos reservados </p>
+            </footer>
+        </div>
+    </h:body>
+</html>

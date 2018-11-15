@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Login</title>
+        <link rel="stylesheet" href="login.css"/>
+        
+    </h:head>
+    <h:body>
+        <header id="cabecalho">
+            <p>Insira suas informações para acessar o sistema</p>
+        </header>
+        <div id="login_adm_dialog">
+            
+            <h:form id="frm">
+                <img src="imagens/webdev-security-icon.png"/>
+                <p:messages autoUpdate="true" />
+              
+                
+                <h:panelGrid columns="2" styleClass="grid-login">
+                    
+                    <p:inputText id="usuario" size="30" placeholder="Usuario" style="height: 30px"
+                                 value="#{usuarioBean.usuario.nomeUsuario}"/><br/>
+                    
+                    <p:password id="senha" size="30" placeholder="Senha" style="height: 30px"
+                                value="#{usuarioBean.usuario.senha}" /><br /><br />
+                    
+                    <p:commandButton value="fazer login" style="width: 318px; margin-top: 10px"
+                                     action="#{usuarioBean.login()}"/>
+                    
+                </h:panelGrid>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+

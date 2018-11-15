@@ -1,0 +1,51 @@
+@CHARSET "ISO-8859-1";
+
+body{
+    background-color: #dddddd;
+    color: rgba(0,0,0,1);
+}
+#container{
+    width: 800px;
+    background-color: #ffffff;
+    margin: -20px auto 0px auto; 
+    box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+    padding: 20px 30px 10px 30px;
+}
+#titulo h1{
+    font-size: 25pt;
+    color: #666666;
+    font-family: Century Gothic;
+    margin-bottom: 8px;
+}
+header#titulo{
+    border-bottom: 1.5px #666666 solid;
+}
+form legend{
+    font-family: Century;
+    font-size: 15pt;
+}
+#titulo h2{
+    font-size: 15pt;
+    color: #cccccc;
+    font-family: Century;
+    margin-bottom: 20px;
+}
+#corpo label{
+    margin-right: 20px;
+    font-size: 13pt;
+}
+#corpo input{
+    margin-bottom: 5px;
+    font-size: 13pt;
+}
+#corpo select{
+    margin-bottom: 5px;
+    font-size: 13pt;
+}
+#rodape{
+    border-top: 1.5px #666666 solid;
+}
+
+#rodape p{
+    text-align: center;
+}
